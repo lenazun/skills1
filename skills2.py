@@ -11,8 +11,7 @@ word_list = [ "What", "about", "the", "Spam", "sausage", "spam", "spam", "bacon"
 def all_odd(number_list): 
 
     def odd(num):
-        if num % 2 != 0:
-            return num
+        return num % 2 != 0
 
     numbers = filter(odd, number_list)
 
@@ -37,7 +36,7 @@ def long_words(word_list):
         if len(word) >= 4:
             return word
 
-    words = filter (long, word_list)
+    words = filter(long, word_list)
 
     return words
 
@@ -79,13 +78,13 @@ def word_lengths(word_list):
     return words
 
 
-
-
 # Write a function (using iteration) that sums all the numbers in a list.
 def sum_numbers(number_list):
-    count = 0
-    for number in number_list:
-        count += number
+
+    def sumnums(x, y):
+        return (x + y)
+
+    count = reduce(sumnums, number_list)
 
     return count
 
@@ -94,38 +93,34 @@ def sum_numbers(number_list):
 # Write a function that multiplies all the numbers in a list together.
 def mult_numbers(number_list):
     
-    count = 1
+    def mult(x, y):
+        return (x * y)
 
-    for number in number_list:
-        count*=number
+    count = reduce(mult, number_list)
 
     return count
-
 
 
 # Write a function that joins all the strings in a list together (without using the join method) and returns a single string.
 def join_strings(word_list):
     
-    joined = ''
+    def joining(x, y):
+        return (x + ' ' + y)
 
-    for word in word_list:
-        joined += word + ' '
+    joined = reduce(joining, word_list)
 
     return joined
-
 
 
 # Write a function that takes a list of integers and returns the average (without using the avg method)
 def average(number_list):
 
-    count = 0
+    def sumnum(x, y):
+        return x + y
 
-    for number in number_list:
-        count += number
-
-    mean = float(count)/len(number_list)
-
-    return mean
+    total = reduce(sumnum, number_list)/float(len(number_list))
+    
+    return total
 
 
 

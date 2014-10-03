@@ -111,8 +111,10 @@ def join_strings(word_list):
     
     joined = ''
 
-    for word in word_list:
+    for word in word_list[:-1]:
         joined += word + ' '
+
+    joined += word_list[-1]
 
     return joined
 

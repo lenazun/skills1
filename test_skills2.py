@@ -49,8 +49,8 @@ class TestSkills(unittest.TestCase):
         self.assertEqual(mult_numbers(self.number_list2), -175200256000)
 
     def test_join_strings(self):
-        self.assertEqual(join_strings(self.word_list), 'What about the Spam sausage spam spam bacon spam tomato and spam ')
-        self.assertEqual(join_strings(self.word_list2), 'Hey there what are hey doing whatever interesting kangaroo no ')
+        self.assertEqual(join_strings(self.word_list), 'What about the Spam sausage spam spam bacon spam tomato and spam')
+        self.assertEqual(join_strings(self.word_list2), 'Hey there what are hey doing whatever interesting kangaroo no')
 
     def test_average(self):
         self.assertEqual(average(self.number_list), 11.8)
