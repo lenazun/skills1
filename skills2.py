@@ -3,124 +3,99 @@
 
 number_list = [-5, 6, 4, 8, 15, 16, 23, 42, 2, 7]
 word_list = [ "What", "about", "the", "Spam", "sausage", "spam", "spam", "bacon", "spam", "tomato", "and", "spam"]
-#number_list2 = [-4, 2, 16, 8, 22, 5, 101, 2, 22, 7, 50]
-#word_list2 =[ "Hey", "there", "what", "are", "hey", "doing", "whatever", "interesting", "kangaroo", "no"]
 
 # Write a function that takes a list of numbers and returns a new list with only the odd numbers.
 
 def all_odd(number_list): 
 
-    def odd(num):
-        return num % 2 != 0
+    #def odd(num):
+    #    return num % 2 != 0
 
-    numbers = filter(odd, number_list)
-
-    return numbers
+    return filter(lambda num: num % 2 != 0, number_list)
 
 
 # Write a function that takes a list of numbers and returns a new list with only the even numbers.
 def all_even(number_list):
     
-    def even(num):
-        if num % 2 == 0:
-            return num
+    #def even(num):
+    #    return num % 2 == 0
 
-    numbers = filter(even, number_list)
+    return filter(lambda num: num %2 == 0, number_list)
 
-    return numbers
 
 # Write a function that takes a list of strings and a new list with all strings of length 4 or greater.
 def long_words(word_list):
 
-    def long(word):
-        if len(word) >= 4:
-            return word
+    #def long(word):
+    #    return len(word) >= 4
 
-    words = filter(long, word_list)
-
-    return words
+    return filter(lambda word: len(word) >= 4, word_list)
 
 
 # Write a function that finds the smallest element in a list of integers and returns it.
 def smallest(number_list):
 
-    x = reduce(min, number_list)
-    return x
+    return reduce(min, number_list)
 
 
 # Write a function that finds the largest element in a list of integers and returns it.
 def largest(number_list):
 
-    x = reduce(max, number_list)
-    return x
-
+    return reduce(max, number_list)
 
 
 # Write a function that takes a list of numbers and returns a new list of all those numbers divided by two.
 def halvesies(number_list):
     
-    def halve(number):
-        return number/2.0
+    #def halve(number):
+    #    return number/2.0
 
-    numbers = map(halve, number_list)
-
-    return numbers
+    return map(lambda number: number/2.0, number_list)
 
 
 # Write a function that takes a list of words and returns a list of all the lengths of those words.
 def word_lengths(word_list):
 
-    def lengths(word):
-        return len(word)
+    #def lengths(word):
+    #    return len(word)
     
-    words = map(lengths, word_list)
-
-    return words
+    return map(lambda word: len(word), word_list)
 
 
 # Write a function (using iteration) that sums all the numbers in a list.
 def sum_numbers(number_list):
 
-    def sumnums(x, y):
-        return (x + y)
-
-    count = reduce(sumnums, number_list)
-
-    return count
-
+    return reduce(lambda x,y: x + y, number_list)
 
 
 # Write a function that multiplies all the numbers in a list together.
 def mult_numbers(number_list):
     
-    def mult(x, y):
-        return (x * y)
+    #def mult(x, y):
+    #    return (x * y)
 
-    count = reduce(mult, number_list)
-
-    return count
+    return reduce(lambda x, y: x*y, number_list)
 
 
 # Write a function that joins all the strings in a list together (without using the join method) and returns a single string.
 def join_strings(word_list):
     
-    def joining(x, y):
-        return (x + ' ' + y)
+    #def joining(x, y):
+    #    return (x + ' ' + y)
 
-    joined = reduce(joining, word_list)
+    return reduce(lambda x, y: x + ' ' + y, word_list)
 
-    return joined
 
 
 # Write a function that takes a list of integers and returns the average (without using the avg method)
 def average(number_list):
 
-    def sumnum(x, y):
-        return x + y
+    #def sumnum(x, y):
+    #    return x + y
 
-    total = reduce(sumnum, number_list)/float(len(number_list))
+    return reduce(lambda x, y: x + y, number_list)/float(len(number_list))
     
-    return total
+
 
 
 
